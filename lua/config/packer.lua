@@ -91,7 +91,7 @@ return require('packer').startup(function(use)
         'folke/which-key.nvim',
         config = function()
             vim.opt.timeout = true
-            vim.opt.timeoutlen = 0
+            vim.opt.timeoutlen = 300
         end
     }
 --------------------------^^^^ plugins up here ^^^^ ---------------------------
