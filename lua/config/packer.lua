@@ -27,7 +27,7 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
------------------------vvvv put plugins here vvvv-----------------------------
+--------------------------vvvv put plugins here vvvv---------------------------
 
     -- base16 color schemes
     use 'tinted-theming/base16-vim'
@@ -58,8 +58,8 @@ return require('packer').startup(function(use)
 
     -- telescope (fuzzyfinding)
     use {
-    'nvim-telescope/telescope.nvim', branch = '0.1.x',
-    requires = { 'nvim-lua/plenary.nvim' }
+        'nvim-telescope/telescope.nvim', branch = '0.1.x',
+        requires = { 'nvim-lua/plenary.nvim' }
     }
 
     -- harpoon (quick file jumping)
@@ -85,6 +85,16 @@ return require('packer').startup(function(use)
 
     -- gentoo syntax
     use 'gentoo/gentoo-syntax'
+
+    -- which key (pop-up keymap legend)
+    use {
+        'folke/which-key.nvim',
+        config = function()
+            vim.opt.timeout = true
+            vim.opt.timeoutlen = 0
+        end
+    }
+--------------------------^^^^ plugins up here ^^^^ ---------------------------
 
     -- Automatically set up your configuration after cloning packer.nvim
     if packer_bootstrap then
