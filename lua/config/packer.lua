@@ -8,7 +8,7 @@
 -- This file is licensed under the MIT license.
 -------------------------------------------------------------------------------
 
--- Package manager for neovim.
+-- Package manager.
 
 local ensure_packer = function()
     local fn = vim.fn
