@@ -51,12 +51,15 @@ vim.cmd('highlight SignColumn guibg = none')
 vim.cmd('highlight StatusLine guibg = none')
 vim.cmd('highlight StatusLineNC guibg = none')
 
--- these really should be enabled or disabled in vim's global settings instead
--- of messing with the colors for them, but I put them here for convenience
--- anyway.
+-- color column (should just be disabled in init.lua, but in case you want to
+-- override the color used, here it is)
 -- vim.cmd('highlight ColorColumn guibg = none')
--- vim.cmd('highlight CursorColumn guibg = none')
--- vim.cmd('highlight CursorLine guibg = none')
+
+-- These two (cursor column and cursor line) really should just be disabled
+-- with the options in init.lua, but for some reason vim is really bad at
+-- actually disabling them globally, so this is a brute force method.
+vim.cmd('highlight CursorColumn guibg = none')
+vim.cmd('highlight CursorLine guibg = none')
 
 -- Error message background
 vim.cmd('highlight ErrorMsg guibg = none')

@@ -42,7 +42,6 @@ lsp.ensure_installed({
     'lemminx',
     'ltex',
     'lua_ls',
-    'powershell_es',
     'pylsp',
     'quick_lint_js',
     'rust_analyzer',
