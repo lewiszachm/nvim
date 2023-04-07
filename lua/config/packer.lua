@@ -82,7 +82,7 @@ return require('packer').startup(function(use)
     -- codewindow (minimap)
     use 'gorbit99/codewindow.nvim'
 
-  -- Automatically set up your configuration after cloning packer.nvim
+    -- Automatically set up your configuration after cloning packer.nvim
     if packer_bootstrap then
         require('packer').sync()
     end
