@@ -20,7 +20,6 @@ require'nvim-treesitter.configs'.setup {
         "cmake",
         "cpp",
         "css",
-        "help",
         "html",
         "java",
         "javascript",

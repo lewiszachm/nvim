@@ -67,7 +67,6 @@ vim.opt.wrap = false
 -- memory settings
 vim.opt.swapfile = false -- when true, use a swap file for the buffer
 vim.opt.backup = false -- make a backup before overwriting a file
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir" -- dir for undo history
 vim.opt.undofile = true -- write undo history to a file when saving
 
 -- swapfile written to disk if nothing is typed for this many milliseconds
