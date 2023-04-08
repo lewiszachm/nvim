@@ -25,7 +25,7 @@ local opts = {
     show_cursor = true,
 
     -- border style for the map (single, double, or none)
-    window_border = 'single',
+    window_border = 'none',
 
     -- set to false to disable color highlighting on the map
     use_treesitter = true

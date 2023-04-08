@@ -1,6 +1,6 @@
 -------------------------------------------------------------------------------
--- WHICH-KEY CONFIG FOR NEOVIM (whichkey.lua)
--- Zachery Lewis (lewiszachm) / 06 Apr 2023
+-- WHICH-KEY CONFIG FOR NEOVIM (which-key.lua)
+-- Zachery Lewis (lewiszachm) / 07 Apr 2023
 
 -- config repo: https://github.com/lewiszachm/nvim
 -- plugin repo: https://github.com/folke/which-key.nvim

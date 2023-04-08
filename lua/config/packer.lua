@@ -32,8 +32,11 @@ return require('packer').startup(function(use)
     -- base16 color schemes
     use 'tinted-theming/base16-vim'
 
-    -- treesitter (better syntax highlighting)
+    -- treesitter (better syntax highlighting / parsing)
     use 'nvim-treesitter/nvim-treesitter'
+
+    -- treesitter-context
+    use 'nvim-treesitter/nvim-treesitter-context'
 
     -- lsp-zero (language server setup. snippets, completions, etc)
     use {
@@ -91,6 +94,7 @@ return require('packer').startup(function(use)
             vim.opt.timeoutlen = 300
         end
     }
+
 --------------------------^^^^ plugins up here ^^^^ ---------------------------
 
     -- Automatically set up your configuration after cloning packer.nvim

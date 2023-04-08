@@ -1,36 +1,46 @@
 -------------------------------------------------------------------------------
--- HARPOON CONFIG FOR NEOVIM (harpoon.lua)
--- Zachery Lewis (lewiszachm) / 06 Apr 2023
+-- TREESITTER-CONTEXT CONFIG FOR NEOVIM (treesitter-context.lua)
+-- Zachery Lewis (lewiszachm) / 07 Apr 2023
 
 -- config repo: https://github.com/lewiszachm/nvim
--- plugin repo: https://github.com/ThePrimeagen/harpoon
+-- plugin repo: https://github.com/nvim-treesitter/nvim-treesitter-context
 
 -- This file is licensed under the MIT license.
 -------------------------------------------------------------------------------
 
--- This plugin lets you assign shortcuts to files so you can easily jump
--- between them.
+-- pins the context of code currently visible in the buffer to the top line
 
-local ui = require("harpoon.ui")
-local mark = require("harpoon.mark")
+require'treesitter-context'.setup{
 
--- leader,h toggles quickmenu (navigate with jk, del with x to remove items)
-vim.keymap.set("n", "<leader>h", ui.toggle_quick_menu)
+    -- enable the plugin
+    enable = true,
 
--- leader,a adds current file to harpoon
-vim.keymap.set("n", "<leader>a", mark.add_file)
+    -- how many lines the window should span. <= 0 mean no limit.
+    max_lines = 0,
 
--- Alt-1 through Alt-0 switch between harpooned files
-vim.keymap.set("n", "<A-1>", function() ui.nav_file(1) end)
-vim.keymap.set("n", "<A-2>", function() ui.nav_file(2) end)
-vim.keymap.set("n", "<A-3>", function() ui.nav_file(3) end)
-vim.keymap.set("n", "<A-4>", function() ui.nav_file(4) end)
-vim.keymap.set("n", "<A-5>", function() ui.nav_file(5) end)
-vim.keymap.set("n", "<A-6>", function() ui.nav_file(6) end)
-vim.keymap.set("n", "<A-7>", function() ui.nav_file(7) end)
-vim.keymap.set("n", "<A-8>", function() ui.nav_file(8) end)
-vim.keymap.set("n", "<A-9>", function() ui.nav_file(9) end)
-vim.keymap.set("n", "<A-0>", function() ui.nav_file(10) end)
+    -- minimum editor window height to enable context. <= 0 mean no limit.
+    min_window_height = 0,
+
+    -- if true, also pin line numbers for context items
+    line_numbers = true,
+
+    -- maximum number of lines to collapse for a single context line
+    multiline_threshold = 20,
+
+    -- context lines to discard if max_lines is exceeded. ('inner' or 'outer')
+    trim_scope = 'outer',
+
+    -- line used to calculate context. ('cursor' or 'topline')
+    mode = 'cursor',
+
+    -- separator between context and content. single character string (ie: '-')
+    -- when set, context will only show up when there are at least 2 lines
+    -- above cursorline.
+    separator = '-',
+
+    -- the Z-index of the context window
+    zindex = 20,
+}
 
 
 
