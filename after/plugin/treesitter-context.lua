@@ -16,7 +16,7 @@ require'treesitter-context'.setup{
     enable = true,
 
     -- how many lines the window should span. <= 0 mean no limit.
-    max_lines = 0,
+    max_lines = 4,
 
     -- minimum editor window height to enable context. <= 0 mean no limit.
     min_window_height = 0,
