@@ -13,22 +13,44 @@
 
 local opts = {
 
+    -- enable or disable in terminal buffers
+    active_in_terminals = false,
+
     -- true to show on startup, false to start hidden
     auto_enable = false,
 
+    -- any file types the minimap should not be shown on
+    exclude_filetypes = {},
+
+    -- max height the minimap can take, including borders
+    max_minimap_height = nil,
+
+    -- if auto_enable = true, don't open for files with more lines than this
+    max_lines = nil,
+
     -- width is physical amount of pixels the minimap takes up
     minimap_width = 22,
+
     -- multiplier is how many characters one dot in the map represents
     width_multiplier = 2,
 
-    -- set to false if you don't want the map to show where your cursor is
+    -- show cursor position on the minimap
     show_cursor = true,
 
     -- border style for the map (single, double, or none)
-    window_border = 'none',
+    window_border = 'single',
 
     -- set to false to disable color highlighting on the map
-    use_treesitter = true
+    use_treesitter = true,
+
+    -- use the LSP to show errors and warnings on the minimap
+    use_lsp = true,
+
+    -- use small dots to show git additions and deletions
+    use_git = true,
+
+    -- z-index the floating window will reside on
+    z_index = 2,
 }
 
 -- apply settings and default keymaps

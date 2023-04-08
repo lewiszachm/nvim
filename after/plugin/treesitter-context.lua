@@ -39,7 +39,7 @@ require'treesitter-context'.setup{
     separator = '-',
 
     -- the Z-index of the context window
-    zindex = 20,
+    zindex = 1,
 }
 
 
