@@ -57,6 +57,15 @@ local opts = {
 require('codewindow').setup(opts)
 require('codewindow').apply_default_keybinds()
 
+-- codewindow specific highlight groups
+-- vim.cmd('highlight CodeWindowBorder guibg = none')
+-- vim.cmd('highlight CodeWindowBackground guibg = none')
+-- vim.cmd('highlight CodeWindowWarn guibg = none')
+-- vim.cmd('highlight CodeWindowError guibg = none')
+-- vim.cmd('highlight CodeWindowAddition guibg = none')
+-- vim.cmd('highlight CodeWindowDeletion guibg = none')
+-- vim.cmd('highlight CodewindowUnderline guibg = none')
+
 
 
 -- MIT License
