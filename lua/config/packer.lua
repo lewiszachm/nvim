@@ -71,9 +71,6 @@ return require('packer').startup(function(use)
     -- nerdcommenter (keymaps to toggle commenting)
     use 'preservim/nerdcommenter'
 
-    -- indent-blankline (indent and whitespace indicators)
-    use 'lukas-reineke/indent-blankline.nvim'
-
     -- nvim-highlight-colors (colorize rgb, hex, etc color codes)
     use 'brenoprata10/nvim-highlight-colors'
 
