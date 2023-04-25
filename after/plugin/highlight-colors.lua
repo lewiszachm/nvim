@@ -9,7 +9,7 @@
 -------------------------------------------------------------------------------
 
 -- This plugin highlights colorcodes (rgba, hex, etc) with the corresponding
--- color. #00ff00 should be rendered green for example.
+-- color. #ff0000 should be rendered red for example.
 
 require('nvim-highlight-colors').setup{
 

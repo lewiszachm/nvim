@@ -20,17 +20,17 @@ vim.keymap.set("n", "<leader>h", ui.toggle_quick_menu)
 -- leader,a adds current file to harpoon
 vim.keymap.set("n", "<leader>a", mark.add_file)
 
--- Ctrl-1 through Ctrl-0 switch between harpooned files
-vim.keymap.set("n", "<C-1>", function() ui.nav_file(1) end)
-vim.keymap.set("n", "<C-2>", function() ui.nav_file(2) end)
-vim.keymap.set("n", "<C-3>", function() ui.nav_file(3) end)
-vim.keymap.set("n", "<C-4>", function() ui.nav_file(4) end)
-vim.keymap.set("n", "<C-5>", function() ui.nav_file(5) end)
-vim.keymap.set("n", "<C-6>", function() ui.nav_file(6) end)
-vim.keymap.set("n", "<C-7>", function() ui.nav_file(7) end)
-vim.keymap.set("n", "<C-8>", function() ui.nav_file(8) end)
-vim.keymap.set("n", "<C-9>", function() ui.nav_file(9) end)
-vim.keymap.set("n", "<C-0>", function() ui.nav_file(10) end)
+-- leader,1 through 0 switch between harpooned files
+vim.keymap.set("n", "<leader>1", function() ui.nav_file(1) end)
+vim.keymap.set("n", "<leader>2", function() ui.nav_file(2) end)
+vim.keymap.set("n", "<leader>3", function() ui.nav_file(3) end)
+vim.keymap.set("n", "<leader>4", function() ui.nav_file(4) end)
+vim.keymap.set("n", "<leader>5", function() ui.nav_file(5) end)
+vim.keymap.set("n", "<leader>6", function() ui.nav_file(6) end)
+vim.keymap.set("n", "<leader>7", function() ui.nav_file(7) end)
+vim.keymap.set("n", "<leader>8", function() ui.nav_file(8) end)
+vim.keymap.set("n", "<leader>9", function() ui.nav_file(9) end)
+vim.keymap.set("n", "<leader>0", function() ui.nav_file(10) end)
 
 
 
