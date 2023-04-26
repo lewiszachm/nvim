@@ -145,8 +145,9 @@ vim.keymap.set("v", "<leader>d", "\"_d")
 -- leaving insert mode with Esc won't change cursor position
 vim.keymap.set("i", "<Esc>", "<Esc>l")
 
--- jk = Esc in insert mode (and also won't move cursor)
+-- jk = Esc in insert and visual mode (and also won't move cursor)
 vim.keymap.set("i", "jk", "<Esc>l")
+vim.keymap.set("v", "jk", "<Esc>l")
 
 -- Get rid of Q
 vim.keymap.set("n", "Q", "<nop>")
