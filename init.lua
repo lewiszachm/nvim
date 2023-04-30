@@ -44,7 +44,8 @@ vim.opt.signcolumn = "yes"
 
 -- render a solid column this many spaces from the left
 -- (set to 80 for a PEP-8 page-width guide)
-vim.opt.colorcolumn = "80"
+-- vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "0"
 
 -- tab and indent settings.
 vim.opt.tabstop = 4 -- number of spaces a tab takes up
