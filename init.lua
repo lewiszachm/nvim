@@ -51,7 +51,7 @@ vim.opt.colorcolumn = "0"
 vim.opt.tabstop = 4 -- number of spaces a tab takes up
 vim.opt.softtabstop = 4 -- number of spaces a tab counts for when editing
 vim.opt.shiftwidth = 4 -- number of spaces auto/smart-indent uses
-vim.opt.expandtab = true -- insert spaces instead of real tabs
+vim.opt.expandtab = false -- insert spaces instead of real tabs
 vim.opt.autoindent = true -- create new line with same indent as previous line
 vim.opt.smartindent = true -- create indents intuitively
 
