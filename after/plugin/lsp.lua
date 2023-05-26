@@ -14,14 +14,17 @@
 -- that lives.
 
 local lsp = require('lsp-zero').preset({
-    name = 'minimal', -- minimal preset. Recommend not to change.
+	name = 'minimal', -- minimal preset. Recommend not to change.
 
-    -- enable default keymaps
-    set_lsp_keymaps = true,
+	-- enable default keymaps
+	set_lsp_keymaps = true,
 
-    -- disable completion managing to allow for custom settings defined below
-    manage_nvim_cmp = false,
+	-- disable completion managing to allow for custom settings defined below
+	manage_nvim_cmp = false,
 })
+
+-- don't initialize jdtls server so that plugin nvim-jdtls can have full control
+lsp.skip_server_setup({'jdtls'})
 
 ------------------------ Languages to auto-install ----------------------------
 
@@ -31,23 +34,23 @@ local lsp = require('lsp-zero').preset({
 -- you)
 -- :Mason is also how you'll update language servers
 lsp.ensure_installed({
-    'asm_lsp',
-    'bashls',
-    'clangd',
-    'cmake',
-    'cssls',
-    'html',
-    'jdtls',
-    'jsonls',
-    'lemminx',
-    'ltex',
-    'lua_ls',
-    'pylsp',
-    'quick_lint_js',
-    'rust_analyzer',
-    'tsserver',
-    'vimls',
-    'yamlls'
+	'asm_lsp',
+	'bashls',
+	'clangd',
+	'cmake',
+	'cssls',
+	'html',
+	'jdtls',
+	'jsonls',
+	'lemminx',
+	'ltex',
+	'lua_ls',
+	'pylsp',
+	'quick_lint_js',
+	'rust_analyzer',
+	'tsserver',
+	'vimls',
+	'yamlls'
 })
 
 ----------------------- Custom completion settings ----------------------------
@@ -75,58 +78,58 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 -- configuring basic behaviour
 local cmp_config = lsp.defaults.cmp_config({
 
-    -- don't pre-select completions.
-    preselect = 'none',
+	-- don't pre-select completions.
+	preselect = 'none',
 
-    -- show completions in a pop-up menu that doesn't auto-select or insert
-    -- same options as completeopt in init.lua
-    completion = {
-        completeopt = 'menuone,noinsert,noselect'
-    },
+	-- show completions in a pop-up menu that doesn't auto-select or insert
+	-- same options as completeopt in init.lua
+	completion = {
+		completeopt = 'menuone,noinsert,noselect'
+	},
 
-    -- draw border around menu
-    window = {
-        completion = cmp.config.window.bordered()
-    },
+	-- draw border around menu
+	window = {
+		completion = cmp.config.window.bordered()
+	},
 
-    -- apply keymaps defined above
-    mapping = cmp_mappings
+	-- apply keymaps defined above
+	mapping = cmp_mappings
 })
 
 -------------------------- keymaps for lsp-zero -------------------------------
 
 lsp.on_attach(function(client, bufnr)
-    local opts = {buffer = bufnr, remap = false}
+	local opts = {buffer = bufnr, remap = false}
 
-    -- g,d to see definition of the item under the cursor
-    vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+	-- g,d to see definition of the item under the cursor
+	vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
 
-    -- Shift-k to show floating info for the item under the cursor
-    vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+	-- Shift-k to show floating info for the item under the cursor
+	vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
 
-    -- leader,v,w,s shows quickfix list for items matching a query
-    vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
+	-- leader,v,w,s shows quickfix list for items matching a query
+	vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
 
-    -- leader,v,d shows floating diagnostic for the item under the cursor
-    vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
+	-- leader,v,d shows floating diagnostic for the item under the cursor
+	vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
 
-    -- ],d goes to the next diagnostic item
-    vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end, opts)
+	-- ],d goes to the next diagnostic item
+	vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end, opts)
 
-    -- [,d goes to the previous diagnostic item
-    vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end, opts)
+	-- [,d goes to the previous diagnostic item
+	vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end, opts)
 
-    -- leader,v,c,a shows code-actions for the item under the cursor
-    vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
+	-- leader,v,c,a shows code-actions for the item under the cursor
+	vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
 
-    -- leader,v,r,r shows all references of the item under the cursor
-    vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
+	-- leader,v,r,r shows all references of the item under the cursor
+	vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
 
-    -- leader,v,r,n lets you rename all instances of the item under the cursor
-    vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
+	-- leader,v,r,n lets you rename all instances of the item under the cursor
+	vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
 
-    -- Ctrl-h shows signature help for the item under the cursor
-    vim.keymap.set("n", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+	-- Ctrl-h shows signature help for the item under the cursor
+	vim.keymap.set("n", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 
 end)
 

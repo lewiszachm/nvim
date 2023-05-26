@@ -118,8 +118,14 @@ vim.cmd('filetype plugin on')
 -- map the leader key (I like to use spacebar)
 vim.g.mapleader = " "
 
+-- search keymaps with Telescope
+vim.keymap.set("n", "<leader>tm", ":Telescope keymaps<CR>")
+
+-- source current file (useful for neovim config files)
+vim.keymap.set("n", "<leader>ss", ":source<CR>")
+
 -- leader,p,v opens netrw (vim's file explorer)
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>pv", ":Ex<CR>")
 
 -- use Shift-j and Shift-k to move code on highlighted lines up and down the
 -- page in visual mode
@@ -148,7 +154,7 @@ vim.keymap.set("i", "<Esc>", "<Esc>l")
 
 -- jk = Esc in insert and visual mode (and also won't move cursor)
 vim.keymap.set("i", "jk", "<Esc>l")
-vim.keymap.set("v", "jk", "<Esc>l")
+vim.keymap.set("v", "jk", "<Esc>")
 
 -- Get rid of Q
 vim.keymap.set("n", "Q", "<nop>")
@@ -159,11 +165,25 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
--- leader,s to edit every instance of the item under the cursor
-vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
+-- leader,r to edit every instance of the item under the cursor
+vim.keymap.set("n", "<leader>r", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 
 -- leader,x to make current file executeable
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", {silent = true})
+
+-- debugging
+-- leader,dc to continue
+-- leader,do to step over
+-- leader,di to step into
+-- leader,du to step out
+-- leader,db to set break point
+-- leader,dr to open repl
+vim.keymap.set("n", "<leader>d", ":lua require'dap'.continue()<CR>")
+vim.keymap.set("n", "<leader>o", ":lua require'dap'.step_over()<CR>")
+vim.keymap.set("n", "<leader>i", ":lua require'dap'.step_into()<CR>")
+vim.keymap.set("n", "<leader>u", ":lua require'dap'.step_out()<CR>")
+vim.keymap.set("n", "<leader>db", ":lua require'dap'.toggle_breakpoint()<CR>")
+vim.keymap.set("n", "<leader>dr", ":lua require'dap'.repl.open()<CR>")
 
 
 
