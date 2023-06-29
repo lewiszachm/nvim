@@ -178,12 +178,12 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", {silent = true})
 -- leader,du to step out
 -- leader,db to set break point
 -- leader,dr to open repl
-vim.keymap.set("n", "<leader>d", ":lua require'dap'.continue()<CR>")
-vim.keymap.set("n", "<leader>o", ":lua require'dap'.step_over()<CR>")
-vim.keymap.set("n", "<leader>i", ":lua require'dap'.step_into()<CR>")
-vim.keymap.set("n", "<leader>u", ":lua require'dap'.step_out()<CR>")
-vim.keymap.set("n", "<leader>db", ":lua require'dap'.toggle_breakpoint()<CR>")
-vim.keymap.set("n", "<leader>dr", ":lua require'dap'.repl.open()<CR>")
+vim.keymap.set("n", "<leader>bc", ":lua require'dap'.continue()<CR>")
+vim.keymap.set("n", "<leader>bo", ":lua require'dap'.step_over()<CR>")
+vim.keymap.set("n", "<leader>bi", ":lua require'dap'.step_into()<CR>")
+vim.keymap.set("n", "<leader>bu", ":lua require'dap'.step_out()<CR>")
+vim.keymap.set("n", "<leader>bb", ":lua require'dap'.toggle_breakpoint()<CR>")
+vim.keymap.set("n", "<leader>br", ":lua require'dap'.repl.open()<CR>")
 
 
 

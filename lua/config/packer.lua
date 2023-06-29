@@ -80,9 +80,6 @@ return require('packer').startup(function(use)
 	-- lexima (autoclose brackets, quotes, etc)
 	use 'cohama/lexima.vim'
 
-	-- codewindow (minimap)
-	use 'gorbit99/codewindow.nvim'
-
 	-- gentoo syntax
 	use 'gentoo/gentoo-syntax'
 
@@ -99,6 +96,7 @@ return require('packer').startup(function(use)
 	use 'mfussenegger/nvim-dap'
 	use 'rcarriga/nvim-dap-ui'
 	use 'mfussenegger/nvim-jdtls' -- java
+	use 'nvim-telescope/telescope-dap.nvim'
 
 --------------------------^^^^ plugins up here ^^^^ ---------------------------
 
