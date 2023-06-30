@@ -92,20 +92,22 @@ return require('packer').startup(function(use)
 		end
 	}
 
-	-- auto config lua-language-server for neovim
-	use 'folke/neodev.nvim'
-	-- needs to run before lspconfig, so start it here to make sure
-	require("neodev").setup({})
-
 	-- debugging
 	use 'mfussenegger/nvim-dap'
 	use 'rcarriga/nvim-dap-ui'
 	use 'mfussenegger/nvim-jdtls' -- java debugger
 	use 'nvim-telescope/telescope-dap.nvim'
 
+	-- auto config lua-language-server for neovim
+	use 'folke/neodev.nvim'
+	-- needs to run before lspconfig, so start it here to make sure
+	require("neodev").setup({
+		library = {plugins = {"nvim-dap-ui"}, types = true}
+	})
+
 --------------------------^^^^ plugins up here ^^^^ ---------------------------
 
-	-- Automatically set up your configuration after cloning packer.nvim
+	-- Automatically set up your config after cloning packer.nvim
 	if packer_bootstrap then
 		require('packer').sync()
 	end
