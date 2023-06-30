@@ -94,11 +94,12 @@ return require('packer').startup(function(use)
 
 	-- auto config lua-language-server for neovim
 	use 'folke/neodev.nvim'
+	-- needs to run before lspconfig, so start it here to make sure
 	require("neodev").setup({})
 
 	-- debugging
 	use 'mfussenegger/nvim-dap'
-	use {'rcarriga/nvim-dap-ui', requires = {'mfussenegger/nvim-dap'}}
+	use 'rcarriga/nvim-dap-ui'
 	use 'mfussenegger/nvim-jdtls' -- java debugger
 	use 'nvim-telescope/telescope-dap.nvim'
 
